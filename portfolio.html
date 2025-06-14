@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <style>
+    /* Reset and base styles */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #eeebeb, #d3a5a5);
+      color: #bb5439;
+      padding: 30px;
+    }
+    /* Header Layout */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .header-left h1 {
+      color: #ad2220;
+      margin-bottom: 20px;
+    }
+    .header-left p {
+      font-size: 1rem;
+      color: #9a480e;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    /* Navigation Menu */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      cursor: pointer;
+      color: #ad2220;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    nav ul li:hover {
+      background: #ad2220;
+      color: #fff;
+    }
+    /* Profile Picture Styling (as part of the header-right) */
+    .profile-pic {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e2cbcb;
+      box-shadow: 0 4px 8px rgba(255, 3, 3, 0.2);
+    }
+    /* Section Styling */
+    .section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(175, 73, 73, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .section h2 {
+      margin-bottom: 10px;
+      color: #ad2220;
+    }
+    /* Hidden class for toggling sections */
+    .hidden {
+      display: none;
+    }
+    /* Contact & Work Links Styling */
+    section ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    section ul li {
+      margin-bottom: 5px;
+    }
+    section ul li a {
+      color: #eea5a1;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    section ul li a:hover {
+      text-decoration: underline;
+      color: #cb186b;
+    }
+  </style>
+</head>
+
+
+<body>
+  <header>
+    <div class="header-left">
+      <h1>My Portfolio</h1>
+      <p>Hello! I'm Jannatul Fardous. Welcome to my portfolio website.</p>
+    </div>
+    <div class="header-right">
+      <nav>
+        <ul>
+          <li onclick="showSection('about')">About Me</li>
+          <li onclick="showSection('works')">My Works</li>
+          <li onclick="showSection('contact')">Contact Me</li>
+        </ul>
+      </nav>
+      <img src="profile.jpeg" alt="Profile Picture" class="profile-pic">
+    </div>
+  </header>
+
+  <!-- About Me Section -->
+  <section id="about" class="section">
+    <h1>I am</h1>
+    <br>
+    <p>
+      Jannatul Fardous, a <em><b><i> CSE </i></b></em> student in <em><b><i> World University of Bangldesh </i></b></em>. Here, you'll find a glimpse into my journey, skills, and interests.
+    </p>
+  </section>
+
+  <!-- Works Section (Initially Hidden) -->
+  <section id="works" class="section hidden">
+    <h2>My Works</h2>
+    <p>Explore some of the projects I have worked on:</p>
+    <ul>
+      <li><a href="https://github.com/yourusername/project1" target="_blank">Project 1</a></li>
+      <li><a href="https://github.com/yourusername/project2" target="_blank">Project 2</a></li>
+      <li><a href="https://github.com/yourusername/project3" target="_blank">Project 3</a></li>
+    </ul>
+  </section>
+
+  <!-- Contact Section (Initially Hidden) -->
+  <section id="contact" class="section hidden">
+    <h2>Contact</h2>
+    <p>Please feel free to reach out via any of the methods below:</p>
+    <ul>
+      <li>Email: <a href="mailto:https://www.j.fardous0007@gmail.com" target="_blank">j.fardous0007@gmail.com </a></li>
+      <li>Phone: 019*****419 </li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a></li>
+      <li>Twitter: <a href="https://twitter.com/yourusername" target="_blank">@yourusername</a></li>
+    </ul>
+  </section>
+
+  <script>
+    // Function to show only the selected section
+    function showSection(sectionId) {
+      const sections = ['about', 'works', 'contact'];
+      sections.forEach(id => {
+        const element = document.getElementById(id);
+        if (id === sectionId) {
+          element.classList.remove('hidden');
+        } else {
+          element.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
